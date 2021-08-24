@@ -4,7 +4,7 @@ require'nvim-treesitter.configs'.setup {
 		"go",
 		"json",
 		"lua",
-		"comment",
+		-- "comment",
         "c",
         "fortran",
         "python"
