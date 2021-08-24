@@ -4,10 +4,9 @@ require'nvim-treesitter.configs'.setup {
 		"go",
 		"json",
 		"lua",
-		-- "comment",
-        "c",
-        "fortran",
-        "python"
+		"c",
+		"fortran",
+		"python"
 	},
 	highlight = {
 		enable = true,
