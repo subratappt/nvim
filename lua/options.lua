@@ -101,5 +101,5 @@ end
 vim.api.nvim_command('autocmd TermOpen term://* startinsert')
 vim.cmd[[set guifont=JetbrainsMono\ Nerd\ Font\ Mono:h10]]
 
-vim.cmd[[nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
-nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>  ]]
+-- vim.cmd[[nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+-- nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>  ]]

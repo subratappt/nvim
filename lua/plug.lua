@@ -181,11 +181,6 @@ return require('packer').startup(function(use)
 		config=function() require("plugins.gitsign") end,
 	}
 
-  --Select text object
-  use {
-		'gcmt/wildfire.vim',
-		event="BufRead",
-	}
 
   --surrounding select text with given text
   use {
@@ -233,29 +228,11 @@ return require('packer').startup(function(use)
 	}
 
 
-	use {
-		'simrat39/symbols-outline.nvim',
-		config=function()
-			require("plugins.symbols")
-		end,
-		cmd="SymbolsOutline"
-	}
 
 
     use {"ellisonleao/glow.nvim", run = "GlowInstall"}
 
 
-	use {
-		'andweeb/presence.nvim',
-		event="VimEnter",
-		config=function ()
-			require("presence"):setup({
-					neovim_image_text   = "HELP!",
-					editing_text        = "STUCK IN THE %s FILE",
-					workspace_text      = "HELP! HOW TO QUIT VIM!",
-			})
-		end
-	}
 
 end)
 
