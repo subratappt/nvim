@@ -54,7 +54,6 @@ opt.showcmd=true
 
 -- clipboard
 -- opt.clipboard = "unnamedplus"
-vim.o.clipboard = "unnamedplus"
 
 -- auto completion on command
 opt.wildmenu=true
