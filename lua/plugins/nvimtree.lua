@@ -53,5 +53,5 @@ vim.g.nvim_tree_icons = {
     }
 }
 
--- -- toggle nvim tree
--- vim.cmd[[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif]]
+-- toggle nvim tree
+vim.cmd[[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif]]
