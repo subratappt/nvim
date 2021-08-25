@@ -6,8 +6,8 @@ git clone https://github.com/subratappt/nvim.git ~/.config/nvim
 # Post installation
 ```
 :LspInstall python
-:LspInstall clangd
-:LspInstall fortls
+:LspInstall cpp
+:LspInstall fortran
 ```
 
 # nvim
