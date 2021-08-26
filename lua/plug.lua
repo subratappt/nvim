@@ -83,37 +83,38 @@ return require('packer').startup(
         }
 
         use {
+            'onsails/lspkind-nvim',
+            config = function()
+                require('plugins.lspkind')
+            end
+        }
+
+        use {
+            'L3MON4D3/LuaSnip',
+            config = function()
+                require('plugins.luasnip')
+            end
+        }
+
+        use {
+            'rafamadriz/friendly-snippets',
+            after = 'LuaSnip'
+        }
+
+        use {
             'hrsh7th/nvim-cmp',
             config = function()
                 require('plugins.cmp')
-            end,
-            event = 'InsertEnter',
-            requires = {
-                {
-                    'L3MON4D3/LuaSnip',
-                    config = function()
-                        require('plugins.luasnip')
-                    end
-                },
-                {
-                    'rafamadriz/friendly-snippets',
-                    after = 'LuaSnip'
-                },
-                {
-                    'onsails/lspkind-nvim',
-                    config = function()
-                        require('plugins.lspkind')
-                    end
-                },
-                'hrsh7th/cmp-buffer',
-                'hrsh7th/cmp-nvim-lsp',
-                'saadparwaiz1/cmp_luasnip',
-                'hrsh7th/cmp-path',
-                'hrsh7th/cmp-calc',
-                'hrsh7th/vim-vsnip',
-                'hrsh7th/vim-vsnip-integ'
-            }
+            end
         }
+        use {'hrsh7th/cmp-buffer'}
+        use {'hrsh7th/cmp-nvim-lsp'}
+        use {'saadparwaiz1/cmp_luasnip'}
+        use {'hrsh7th/cmp-path'}
+        use {'hrsh7th/cmp-calc'}
+        use {'hrsh7th/cmp-vsnip'}
+        use {'hrsh7th/vim-vsnip'}
+        use {'hrsh7th/vim-vsnip-integ'}
 
         use {
             'glepnir/lspsaga.nvim',
@@ -269,3 +270,80 @@ return require('packer').startup(
         use {'ellisonleao/glow.nvim', run = 'GlowInstall'}
     end
 )
+
+-- -- Add additional capabilities supported by nvim-cmp
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- capabilities.textDocument.completion.completionItem.preselectSupport = true
+-- capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+-- capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+-- capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+-- capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+-- capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+-- capabilities.textDocument.completion.completionItem.resolveSupport = {
+--   properties = {
+--     'documentation',
+--     'detail',
+--     'additionalTextEdits',
+--   },
+-- }
+
+-- -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+-- local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+-- for _, lsp in ipairs(servers) do
+--   nvim_lsp[lsp].setup {
+--     -- on_attach = my_custom_on_attach,
+--     capabilities = capabilities,
+--   }
+-- end
+
+-- -- Set completeopt to have a better completion experience
+-- vim.o.completeopt = 'menuone,noselect'
+
+-- -- luasnip setup
+-- local luasnip = require 'luasnip'
+-- local nvim_lsp= require 'lsconfig'
+-- -- nvim-cmp setup
+-- local cmp = require 'cmp'
+-- cmp.setup {
+--   snippet = {
+--     expand = function(args)
+--       require('luasnip').lsp_expand(args.body)
+--     end,
+--   },
+--   mapping = {
+--     ['<C-p>'] = cmp.mapping.select_prev_item(),
+--     ['<C-n>'] = cmp.mapping.select_next_item(),
+--     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+--     ['<C-f>'] = cmp.mapping.scroll_docs(4),
+--     ['<C-Space>'] = cmp.mapping.complete(),
+--     ['<C-e>'] = cmp.mapping.close(),
+--     ['<CR>'] = cmp.mapping.confirm {
+--       behavior = cmp.ConfirmBehavior.Replace,
+--       select = true,
+--     },
+--     ['<Tab>'] = function(fallback)
+--       if vim.fn.pumvisible() == 1 then
+--         vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
+--       elseif luasnip.expand_or_jumpable() then
+--         vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+--       else
+--         fallback()
+--       end
+--     end,
+--     ['<S-Tab>'] = function(fallback)
+--       if vim.fn.pumvisible() == 1 then
+--         vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
+--       elseif luasnip.jumpable(-1) then
+--         vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
+--       else
+--         fallback()
+--       end
+--     end,
+--   },
+--   sources = {
+--     { name = 'nvim_lsp' },
+--     { name = 'luasnip' },
+--   }
+-- }

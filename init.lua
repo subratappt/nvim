@@ -9,7 +9,6 @@
 		* https://github.com/theniceboy/nvim
 		* https://github.com/siduck76/NvChad
 --]]
-
 -- Loading basic configuration
 require('options')
 require('mapping')
@@ -22,47 +21,33 @@ local has_packer, error_msg = pcall(require, 'packer')
 local no_plugins = false
 
 if not has_packer and not has_packer_file then
-	local install_path = vim.fn.stdpath("data").."/site/pack/packer/opt/packer.nvim"
-	print("Installing packer to "..install_path)
+    local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
+    print('Installing packer to ' .. install_path)
 
-	vim.fn.delete(install_path, "rf")
-	vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+    vim.fn.delete(install_path, 'rf')
+    vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
 
-	no_plugins = true
+    no_plugins = true
 
-	vim.cmd[[packadd packer.nvim]]
+    vim.cmd [[packadd packer.nvim]]
 
-	has_packer, error_msg = pcall(require, 'packer')
-	if not has_packer then
-		print(error_msg)
-		return
-	end -- inner has_packer
-
+    has_packer, error_msg = pcall(require, 'packer')
+    if not has_packer then
+        print(error_msg)
+        return
+    end -- inner has_packer
 end -- outer has_packer
 
 -- Reading plugins configuration
 local ok, error = pcall(require, 'plug')
 if not ok then
-	print("failed to initialize plugin")
-	print(error)
+    print('failed to initialize plugin')
+    print(error)
 end
 
 vim.cmd([[autocmd BufWritePost plug.lua source <afile> | PackerCompile]])
 
 if no_plugins then
-	vim.cmd([[PackerSync]])
-	print("Please quit the neovim after plugins are all successful installed")
+    vim.cmd([[PackerSync]])
+    print('Please quit the neovim after plugins are all successful installed')
 end
-
-local cmp = require('cmp')
-local luasnip = require('luasnip')
--- local lspkind = require('lspkind')
-
--- local t = function(str)
---     return vim.api.nvim_replace_termcodes(str, true, true, true)
--- end
--- local check_back_space = function()
---     local col = vim.fn.col '.' - 1
---     return col == 0 or vim.fn.getline('.'):sub(col, col):match '%s' ~= nil
--- end
-
