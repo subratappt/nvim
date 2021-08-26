@@ -200,13 +200,22 @@ return require('packer').startup(function(use)
 	}
 
   -- open a big terminal
-  use {
-		'numtostr/FTerm.nvim',
-		config=function()
-			require("plugins.fterm")
+  -- use {
+		-- 'numtostr/FTerm.nvim',
+		-- config=function()
+			-- require("plugins.fterm")
+			-- require("plugins.lazygit")
+		-- end,
+	-- }
+
+    -- toggleterm
+    use {
+        "akinsho/toggleterm.nvim",
+        config=function ()
+            require('plugins.toggleterm')
 			require("plugins.lazygit")
-		end,
-	}
+        end
+    }
 
 	use {
 		'windwp/nvim-autopairs',

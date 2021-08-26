@@ -27,7 +27,7 @@ Map("n",  ";",     ":")
 
 vim.g.mapleader=" "
 
-Map("t","<leader><ESC>","<C-\\><C-n>")
+Map("t","<ESC>","<C-\\><C-n>")
 
 Map("n", ";w",        ":w<CR>")
 
