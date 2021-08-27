@@ -71,10 +71,10 @@ Map("n", "srv",       "<C-w>b<C-w>H")
 -- Map('n', '<Leader>k', ':HopLine<CR>')
 
 -- --telescope
--- Map('n', '<leader>ff', [[<cmd>Telescope find_files<cr>]])
+Map('n', '<leader>ff', [[<cmd>Telescope find_files<cr>]])
 -- Map('n', '<leader>fp', [[<cmd>Telescope media_files<cr>]])
 -- Map('n', '<leader>fg', [[<cmd>Telescope live_grep<cr>]])
--- Map('n', '<leader>fb', [[<cmd>Telescope buffers<cr>]])
+Map('n', '<leader>fb', [[<cmd>Telescope file_browser<cr>]])
 -- Map('n', '<leader>fh', [[<cmd>Telescope help_tags<cr>]])
 
 -- --SymbolsOutline

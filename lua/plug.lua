@@ -40,24 +40,25 @@ return require('packer').startup(
             end
         }
 
-        --telescope: extensible fuzzy file finder--
+
+
         use {
             'nvim-telescope/telescope.nvim',
-            cmd = 'Telescope',
-            requires = {
-                {'nvim-lua/popup.nvim'},
-                {'nvim-lua/plenary.nvim'}
-            },
+            requires = { {'nvim-lua/plenary.nvim'} },
             config = function()
                 require('plugins.telescope')
             end,
-            after = 'telescope-media-files.nvim'
         }
 
-        use {
-            'nvim-telescope/telescope-media-files.nvim',
-            cmd = 'Telescope'
-        }
+
+        use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+
+
+        --use {
+        --    'nvim-telescope/telescope-media-files.nvim',
+        --    cmd = 'Telescope'
+        --}
 
         --nvim-bufferline: better buffer line--
         use {
@@ -275,6 +276,20 @@ return require('packer').startup(
         }
 
         use {'ellisonleao/glow.nvim', run = 'GlowInstall'}
+
+        use {
+          "glepnir/dashboard-nvim",
+          cmd = {
+             "Dashboard",
+             "DashboardNewFile",
+             "DashboardJumpMarks",
+             "SessionLoad",
+             "SessionSave",
+          },
+          config = function()
+             require "plugins.dashboard"
+          end,
+       }
     end
 )
 
