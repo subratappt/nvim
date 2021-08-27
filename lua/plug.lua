@@ -25,13 +25,6 @@ return require('packer').startup(
             event = 'BufEnter'
         }
 
-        -- colorscheme
-        -- use {
-        --     'navarasu/onedark.nvim',
-        --     config = function()
-        --         require('onedark').setup()
-        --     end
-        -- }
 
         use {
             'rafi/awesome-vim-colorschemes',
@@ -39,7 +32,6 @@ return require('packer').startup(
                 vim.cmd('colorscheme onedark')
             end
         }
-
 
 
         use {
@@ -197,18 +189,6 @@ return require('packer').startup(
             end
         }
 
-        use {
-            'pechorin/any-jump.vim',
-            config = function()
-                vim.g.any_jump_window_width_ratio = 0.8
-                vim.g.any_jump_window_height_ratio = 0.9
-            end,
-            cmd = {
-                'AnyJump',
-                'AnyJumpBack'
-            }
-        }
-
         --git information
         use {
             'lewis6991/gitsigns.nvim',
@@ -254,6 +234,14 @@ return require('packer').startup(
                 require('plugins.toggleterm')
                 require('plugins.lazygit')
             end
+        }
+
+        use {
+            's1n7ax/nvim-terminal',
+            config = function()
+                vim.o.hidden = true
+                require('nvim-terminal').setup()
+            end,
         }
 
         use {
