@@ -75,7 +75,8 @@ cmp.setup {
                 nvim_lsp = '[LSP]',
                 luasnip = '[LuaSnip]',
                 nvim_lua = '[Lua]',
-                latex_symbols = '[Latex]'
+                latex_symbols = '[Latex]',
+                vsnip='[VSnip]'
             })[entry.source.name]
             return vim_item
         end

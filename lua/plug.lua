@@ -26,10 +26,17 @@ return require('packer').startup(
         }
 
         -- colorscheme
+        -- use {
+        --     'navarasu/onedark.nvim',
+        --     config = function()
+        --         require('onedark').setup()
+        --     end
+        -- }
+
         use {
-            'navarasu/onedark.nvim',
-            config = function()
-                require('onedark').setup()
+            'rafi/awesome-vim-colorschemes',
+            config=function() 
+                vim.cmd('colorscheme onedark')
             end
         }
 
@@ -149,7 +156,7 @@ return require('packer').startup(
         use {
             'nvim-treesitter/nvim-treesitter',
             run = ':TSUpdate',
-            event = 'VimEnter',
+            -- event = 'VimEnter',
             config = function()
                 require('plugins.treesitter')
             end
@@ -248,11 +255,11 @@ return require('packer').startup(
             end
         }
 
-        -- use {
-        -- 	'windwp/nvim-autopairs',
-        -- 	config=function() require('plugins/autopairs') end,
-        -- 	after='nvim-compe',
-        -- }
+        use {
+            'windwp/nvim-autopairs',
+            config=function() require('plugins/autopairs') end,
+            after='nvim-cmp',
+        }
 
         use {
             'sbdchd/neoformat',

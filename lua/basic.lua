@@ -32,8 +32,8 @@ vim.o.scrolloff = 8 -- start scrolling when 8 lines away from margins
 -- ================= Visualization ================= --
 
 vim.o.termguicolors = true
--- vim.o.background = 'dark'
--- vim.cmd('colorscheme palenight')
+vim.o.background = 'dark'
+vim.cmd('colorscheme onedark')
 -- vim.api.nvim_command('let g:palenight_terminal_italics=1')
 
 
