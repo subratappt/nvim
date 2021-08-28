@@ -18,7 +18,7 @@ toggleterm.setup {
     shading_factor = 3, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
     start_in_insert = true,
     insert_mappings = true, -- whether or not the open mapping applies in insert mode
-    persist_size = true,
+    persist_size = false,
     direction = 'float', -- 'vertical' | 'horizontal' | 'window' | 'float',
     close_on_exit = true, -- close the terminal window when the process exits
     shell = vim.o.shell, -- change the default shell
@@ -30,7 +30,7 @@ toggleterm.setup {
         -- not natively supported but implemented in this plugin.
         border = 'curved',
          --'single' | 'double' | 'shadow' | 'curved', -- other options supported by win open
-        width = math.floor(vim.o.columns * 0.75),
+        width = math.floor(vim.o.columns * 0.7),
         height = math.floor(vim.o.lines * 0.6),
         winblend = 0,
         highlights = {
