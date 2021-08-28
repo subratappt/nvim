@@ -76,7 +76,7 @@ cmp.setup {
                 luasnip = '[LuaSnip]',
                 nvim_lua = '[Lua]',
                 latex_symbols = '[Latex]',
-                vsnip='[VSnip]'
+                vsnip = '[VSnip]'
             })[entry.source.name]
             return vim_item
         end

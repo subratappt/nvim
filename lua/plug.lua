@@ -25,27 +25,22 @@ return require('packer').startup(
             event = 'BufEnter'
         }
 
-
         use {
             'rafi/awesome-vim-colorschemes',
-            config=function() 
+            config = function()
                 vim.cmd('colorscheme onedark')
             end
         }
 
-
         use {
             'nvim-telescope/telescope.nvim',
-            requires = { {'nvim-lua/plenary.nvim'} },
+            requires = {{'nvim-lua/plenary.nvim'}},
             config = function()
                 require('plugins.telescope')
-            end,
+            end
         }
 
-
-        use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-
-
+        use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
 
         --use {
         --    'nvim-telescope/telescope-media-files.nvim',
@@ -241,13 +236,15 @@ return require('packer').startup(
             config = function()
                 vim.o.hidden = true
                 require('nvim-terminal').setup()
-            end,
+            end
         }
 
         use {
             'windwp/nvim-autopairs',
-            config=function() require('plugins/autopairs') end,
-            after='nvim-cmp',
+            config = function()
+                require('plugins/autopairs')
+            end,
+            after = 'nvim-cmp'
         }
 
         use {
@@ -266,18 +263,17 @@ return require('packer').startup(
         use {'ellisonleao/glow.nvim', run = 'GlowInstall'}
 
         use {
-          "glepnir/dashboard-nvim",
-          cmd = {
-             "Dashboard",
-             "DashboardNewFile",
-             "DashboardJumpMarks",
-             "SessionLoad",
-             "SessionSave",
-          },
-          config = function()
-             require "plugins.dashboard"
-          end,
-       }
+            'glepnir/dashboard-nvim',
+            cmd = {
+                'Dashboard',
+                'DashboardNewFile',
+                'DashboardJumpMarks',
+                'SessionLoad',
+                'SessionSave'
+            },
+            config = function()
+                require 'plugins.dashboard'
+            end
+        }
     end
 )
-

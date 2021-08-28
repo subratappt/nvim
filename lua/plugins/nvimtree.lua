@@ -2,17 +2,17 @@ local opts = {silent = true, noremap = true}
 vim.api.nvim_set_keymap('n', '<C-n>', '<Cmd>NvimTreeToggle<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>r', '<Cmd>NvimTreeRefresh<CR>', opts)
 
-local ok, tree_c = pcall(require, "nvim-tree.config")
+local ok, tree_c = pcall(require, 'nvim-tree.config')
 if not ok then
-	print(tree_c)
-	return
+    print(tree_c)
+    return
 end
 
 local tree_cb = tree_c.nvim_tree_callback
 
-vim.g.nvim_tree_side = "left"
+vim.g.nvim_tree_side = 'left'
 vim.g.nvim_tree_width = 25
-vim.g.nvim_tree_ignore = {".git", "node_modules", ".cache"}
+vim.g.nvim_tree_ignore = {'.git', 'node_modules', '.cache'}
 -- vim.g.nvim_tree_gitignore = 0
 -- vim.g.nvim_tree_auto_ignore_ft = {"startify","dashboard"} -- don't open tree on specific fiypes.
 -- vim.g.nvim_tree_auto_open = 0
@@ -39,19 +39,19 @@ vim.g.nvim_tree_show_icons = {
     -- folder_arrows= 1
 }
 vim.g.nvim_tree_icons = {
-    default = "",
-    symlink = "",
+    default = '',
+    symlink = '',
     folder = {
         -- arrow_open = "",
         -- arrow_closed = "",
-        default = "",
-        open = "",
-        empty = "", -- 
-        empty_open = "",
-        symlink = "",
-        symlink_open = ""
+        default = '',
+        open = '',
+        empty = '', -- 
+        empty_open = '',
+        symlink = '',
+        symlink_open = ''
     }
 }
 
 -- toggle nvim tree
-vim.cmd[[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif]]
+vim.cmd [[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif]]

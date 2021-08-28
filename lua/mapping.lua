@@ -1,52 +1,52 @@
 function Map(mode, lhs, rhs, opts)
     local options = {noremap = true, silent = true}
     if opts then
-        options = vim.tbl_extend("force", options, opts)
+        options = vim.tbl_extend('force', options, opts)
     end
     local stat, error = pcall(vim.api.nvim_set_keymap, mode, lhs, rhs, options)
-		if not stat then
-			print(error)
-		end
+    if not stat then
+        print(error)
+    end
 end
 
-Map("",  "K",     "5k")
-Map("",  "J",     "5j")
-Map("",  "L",     "$")
-Map("",  "H",     "0")
-Map("",  "X",     "Vx")
-Map("",  "W",     "5w")
-Map("",  "B",     "5b")
-Map("",  "vw",    "viw")
-Map("",  "<C-z>", "u")
-Map("n", "<",     "<<")
-Map("n", ">",     ">>")
-Map("",  "s",     "<nop>")
-Map("",  "-",     "N")
-Map("",  "=",     "n")
-Map("n",  ";",     ":")
+Map('', 'K', '5k')
+Map('', 'J', '5j')
+Map('', 'L', '$')
+Map('', 'H', '0')
+Map('', 'X', 'Vx')
+Map('', 'W', '5w')
+Map('', 'B', '5b')
+Map('', 'vw', 'viw')
+Map('', '<C-z>', 'u')
+Map('n', '<', '<<')
+Map('n', '>', '>>')
+Map('', 's', '<nop>')
+Map('', '-', 'N')
+Map('', '=', 'n')
+Map('n', ';', ':')
 
-vim.g.mapleader=" "
+vim.g.mapleader = ' '
 
-Map("t","<ESC>","<C-\\><C-n>")
+Map('t', '<ESC>', '<C-\\><C-n>')
 
-Map("n", ";w",        ":w<CR>")
+Map('n', ';w', ':w<CR>')
 
-Map("n", "<LEADER>q", ":wq<CR>")
+Map('n', '<LEADER>q', ':wq<CR>')
 
-Map("n", "<C-A-q>",     ":qa<CR>")
+Map('n', '<C-A-q>', ':qa<CR>')
 
-Map("v", "<LEADER>y", [["+y]])
+Map('v', '<LEADER>y', [["+y]])
 
-Map("",  "<LEADER>p", [["+p]])
+Map('', '<LEADER>p', [["+p]])
 
-Map("n", "<ESC>",     ":nohlsearch<CR>")
+Map('n', '<ESC>', ':nohlsearch<CR>')
 
-Map("i", "jj",        "<ESC>")
+Map('i', 'jj', '<ESC>')
 
-Map("n", "spv",       "<C-w>t<C-w>H")
+Map('n', 'spv', '<C-w>t<C-w>H')
 
-Map("n", "srr",       "<C-w>b<C-w>K")
-Map("n", "srv",       "<C-w>b<C-w>H")
+Map('n', 'srr', '<C-w>b<C-w>K')
+Map('n', 'srv', '<C-w>b<C-w>H')
 
 -- Map("n", "<up>",      ":res +5<CR>")
 -- Map("n", "<down>",    ":res -5<CR>")
