@@ -171,11 +171,19 @@ return require('packer').startup(
             cmd = {'TZAtaraxis', 'TZFocus', 'TZMinimalist'}
         }
 
-        -- vim-commentary: for quickly commenting--
+--         -- vim-commentary: for quickly commenting--
+--         use {
+--             'tpope/vim-commentary',
+--             keys = {{'n', 'gcc'}, {'v', 'gc'}}
+--         }
+        
         use {
-            'tpope/vim-commentary',
-            keys = {{'n', 'gcc'}, {'v', 'gc'}}
-        }
+            "terrortylor/nvim-comment",
+            config=function() 
+                require('nvim_comment').setup()
+                end
+            }
+
 
         --treesitter: support more colorful highlighting
         use {
