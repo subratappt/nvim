@@ -37,15 +37,12 @@ return require('packer').startup(
             requires = {{'nvim-lua/plenary.nvim'}},
             config = function()
                 require('plugins.telescope')
-            end
+            end,
+        
+            use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
+            use {'nvim-telescope/telescope-media-files.nvim'}
+
         }
-
-        use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
-
-        --use {
-        --    'nvim-telescope/telescope-media-files.nvim',
-        --    cmd = 'Telescope'
-        --}
 
         --nvim-bufferline: better buffer line--
         use {
@@ -84,32 +81,75 @@ return require('packer').startup(
             end
         }
 
-        use {
-            'L3MON4D3/LuaSnip',
-            config = function()
-                require('plugins.luasnip')
-            end
-        }
 
-        use {
-            'rafamadriz/friendly-snippets',
-            after = 'LuaSnip'
-        }
+
 
         use {
             'hrsh7th/nvim-cmp',
+            --event="InserEnter",
             config = function()
                 require('plugins.cmp')
             end
         }
-        use {'hrsh7th/cmp-buffer'}
-        use {'hrsh7th/cmp-nvim-lsp'}
-        use {'saadparwaiz1/cmp_luasnip'}
-        use {'hrsh7th/cmp-path'}
-        use {'hrsh7th/cmp-calc'}
-        use {'hrsh7th/cmp-vsnip'}
-        use {'hrsh7th/vim-vsnip'}
-        use {'hrsh7th/vim-vsnip-integ'}
+ 
+         use {
+             'L3MON4D3/LuaSnip',
+             config = function()
+                 require('plugins.luasnip')
+             end,
+             wants="friendly-snippets",
+--             after="nvim-cmp",
+         }
+
+         use {
+             "saadparwaiz1/cmp_luasnip",
+             -- after = "LuaSnip",
+         }
+
+         use {
+             "hrsh7th/cmp-nvim-lua",
+             -- after = "cmp_luasnip",
+         }
+
+         use {
+             "hrsh7th/cmp-nvim-lsp",
+             -- after = "cmp-nvim-lua",
+         }
+
+         use {
+             "hrsh7th/cmp-buffer",
+             -- after = "cmp-nvim-lsp",
+         }
+
+         use {
+             "rafamadriz/friendly-snippets",
+             -- after = "cmp-buffer",
+         }
+
+         use {'hrsh7th/cmp-path',
+            --after = "cmp-nvim-lsp",
+         }
+         use {'hrsh7th/cmp-calc',
+         --after = "cmp-nvim-lsp",
+         }
+         use {'hrsh7th/cmp-vsnip',
+         --after = "cmp-nvim-lsp",
+         }
+    
+
+          -- use {'hrsh7th/vim-vsnip'}
+          -- use {'hrsh7th/vim-vsnip-integ'}
+
+
+
+
+         use {
+             'windwp/nvim-autopairs',
+             config = function()
+                 require('plugins/autopairs')
+             end,
+             after = 'nvim-cmp'
+         }
 
         use {
             'glepnir/lspsaga.nvim',
@@ -128,7 +168,7 @@ return require('packer').startup(
             requires = 'kyazdani42/nvim-web-devicons'
         }
 
-        --TrueZen.nvim: zen mode in neovim--
+        -- TrueZen.nvim: zen mode in neovim--
         use {
             'Pocco81/TrueZen.nvim',
             cmd = {'TZAtaraxis', 'TZFocus', 'TZMinimalist'}
@@ -167,14 +207,6 @@ return require('packer').startup(
             event = 'BufRead'
         }
 
-        --file navigation
-        use {
-            'mcchrish/nnn.vim',
-            config = function()
-                require('plugins.nnn')
-            end,
-            cmd = 'NnnPicker'
-        }
 
         use {
             'airblade/vim-rooter',
@@ -239,13 +271,7 @@ return require('packer').startup(
             end
         }
 
-        use {
-            'windwp/nvim-autopairs',
-            config = function()
-                require('plugins/autopairs')
-            end,
-            after = 'nvim-cmp'
-        }
+
 
         use {
             'sbdchd/neoformat',

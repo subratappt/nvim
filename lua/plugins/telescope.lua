@@ -18,8 +18,8 @@ telescope.setup(
                 '--column',
                 '--smart-case'
             },
-            prompt_prefix = '  ',
-            selection_caret = '  ',
+            prompt_prefix = ' > ',
+            selection_caret = '> ',
             entry_prefix = '  ',
             initial_mode = 'insert',
             selection_strategy = 'reset',
@@ -27,7 +27,7 @@ telescope.setup(
             layout_strategy = 'horizontal',
             layout_config = {
                 horizontal = {
-                    prompt_position = 'top',
+                    prompt_position = 'bottom',
                     preview_width = 0.55,
                     results_width = 0.5
                 },
@@ -70,5 +70,16 @@ telescope.setup(
     }
 )
 
-require('telescope').load_extension('fzf')
---require('telescope').load_extension('media_files')
+local extensions = { "fzf" }
+local packer_repos = [["extensions", "telescope-fzf-native.nvim"]]
+
+if vim.fn.executable "ueberzug" == 1 then
+   table.insert(extensions, "media_files")
+   packer_repos = packer_repos .. ', "telescope-media-files.nvim"'
+end
+
+   
+for _, ext in ipairs(extensions) do
+      telescope.load_extension(ext)
+end
+ 
