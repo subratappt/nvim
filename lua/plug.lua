@@ -54,7 +54,7 @@ return require('packer').startup(
 
         use {
             'kabouzeid/nvim-lspinstall',
-            event = 'BufRead'
+            -- event = 'BufRead'
         }
 
         --nvim-lspconfig: built-in lsp--
@@ -63,7 +63,7 @@ return require('packer').startup(
             config = function()
                 require('plugins.lsp')
             end,
-            after = 'nvim-lspinstall'
+            -- after = 'nvim-lspinstall'
         }
 
         use {
@@ -81,9 +81,6 @@ return require('packer').startup(
             end
         }
 
-
-
-
         use {
             'hrsh7th/nvim-cmp',
             --event="InserEnter",
@@ -98,42 +95,42 @@ return require('packer').startup(
                  require('plugins.luasnip')
              end,
              wants="friendly-snippets",
---             after="nvim-cmp",
+             -- after="nvim-cmp",
          }
 
          use {
              "saadparwaiz1/cmp_luasnip",
-             -- after = "LuaSnip",
+              after = "LuaSnip",
          }
 
          use {
              "hrsh7th/cmp-nvim-lua",
-             -- after = "cmp_luasnip",
+              after = "cmp_luasnip",
          }
 
          use {
              "hrsh7th/cmp-nvim-lsp",
-             -- after = "cmp-nvim-lua",
+              after = "cmp-nvim-lua",
          }
 
          use {
              "hrsh7th/cmp-buffer",
-             -- after = "cmp-nvim-lsp",
+              after = "cmp-nvim-lsp",
          }
 
          use {
              "rafamadriz/friendly-snippets",
-             -- after = "cmp-buffer",
+              after = "cmp-buffer",
          }
 
          use {'hrsh7th/cmp-path',
-            --after = "cmp-nvim-lsp",
+             after = "cmp-nvim-lsp",
          }
          use {'hrsh7th/cmp-calc',
-         --after = "cmp-nvim-lsp",
+             after = "cmp-nvim-lsp",
          }
          use {'hrsh7th/cmp-vsnip',
-         --after = "cmp-nvim-lsp",
+             after = "cmp-nvim-lsp",
          }
     
 
