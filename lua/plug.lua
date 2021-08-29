@@ -134,8 +134,8 @@ return require('packer').startup(
          }
     
 
-          -- use {'hrsh7th/vim-vsnip'}
-          -- use {'hrsh7th/vim-vsnip-integ'}
+          use {'hrsh7th/vim-vsnip'}
+          use {'hrsh7th/vim-vsnip-integ'}
 
 
 
