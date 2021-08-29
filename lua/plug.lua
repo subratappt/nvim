@@ -38,10 +38,8 @@ return require('packer').startup(
             config = function()
                 require('plugins.telescope')
             end,
-        
             use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
             use {'nvim-telescope/telescope-media-files.nvim'}
-
         }
 
         --nvim-bufferline: better buffer line--
@@ -53,7 +51,7 @@ return require('packer').startup(
         }
 
         use {
-            'kabouzeid/nvim-lspinstall',
+            'kabouzeid/nvim-lspinstall'
             -- event = 'BufRead'
         }
 
@@ -62,7 +60,7 @@ return require('packer').startup(
             'neovim/nvim-lspconfig',
             config = function()
                 require('plugins.lsp')
-            end,
+            end
             -- after = 'nvim-lspinstall'
         }
 
@@ -88,65 +86,64 @@ return require('packer').startup(
                 require('plugins.cmp')
             end
         }
- 
-         use {
-             'L3MON4D3/LuaSnip',
-             config = function()
-                 require('plugins.luasnip')
-             end,
-             wants="friendly-snippets",
-             -- after="nvim-cmp",
-         }
 
-         use {
-             "saadparwaiz1/cmp_luasnip",
-              after = "LuaSnip",
-         }
+        use {
+            'L3MON4D3/LuaSnip',
+            config = function()
+                require('plugins.luasnip')
+            end,
+            wants = 'friendly-snippets'
+            -- after="nvim-cmp",
+        }
 
-         use {
-             "hrsh7th/cmp-nvim-lua",
-              after = "cmp_luasnip",
-         }
+        use {
+            'saadparwaiz1/cmp_luasnip',
+            after = 'LuaSnip'
+        }
 
-         use {
-             "hrsh7th/cmp-nvim-lsp",
-              after = "cmp-nvim-lua",
-         }
+        use {
+            'hrsh7th/cmp-nvim-lua',
+            after = 'cmp_luasnip'
+        }
 
-         use {
-             "hrsh7th/cmp-buffer",
-              after = "cmp-nvim-lsp",
-         }
+        use {
+            'hrsh7th/cmp-nvim-lsp',
+            after = 'cmp-nvim-lua'
+        }
 
-         use {
-             "rafamadriz/friendly-snippets",
-              after = "cmp-buffer",
-         }
+        use {
+            'hrsh7th/cmp-buffer',
+            after = 'cmp-nvim-lsp'
+        }
 
-         use {'hrsh7th/cmp-path',
-             after = "cmp-nvim-lsp",
-         }
-         use {'hrsh7th/cmp-calc',
-             after = "cmp-nvim-lsp",
-         }
-         use {'hrsh7th/cmp-vsnip',
-             after = "cmp-nvim-lsp",
-         }
-    
+        use {
+            'rafamadriz/friendly-snippets',
+            after = 'cmp-buffer'
+        }
 
-          use {'hrsh7th/vim-vsnip'}
-          use {'hrsh7th/vim-vsnip-integ'}
+        use {
+            'hrsh7th/cmp-path',
+            after = 'cmp-nvim-lsp'
+        }
+        use {
+            'hrsh7th/cmp-calc',
+            after = 'cmp-nvim-lsp'
+        }
+        use {
+            'hrsh7th/cmp-vsnip',
+            after = 'cmp-nvim-lsp'
+        }
 
+        use {'hrsh7th/vim-vsnip'}
+        use {'hrsh7th/vim-vsnip-integ'}
 
-
-
-         use {
-             'windwp/nvim-autopairs',
-             config = function()
-                 require('plugins/autopairs')
-             end,
-             after = 'nvim-cmp'
-         }
+        use {
+            'windwp/nvim-autopairs',
+            config = function()
+                require('plugins/autopairs')
+            end,
+            after = 'nvim-cmp'
+        }
 
         use {
             'glepnir/lspsaga.nvim',
@@ -171,19 +168,13 @@ return require('packer').startup(
             cmd = {'TZAtaraxis', 'TZFocus', 'TZMinimalist'}
         }
 
---         -- vim-commentary: for quickly commenting--
---         use {
---             'tpope/vim-commentary',
---             keys = {{'n', 'gcc'}, {'v', 'gc'}}
---         }
-        
+        -- Comment
         use {
-            "terrortylor/nvim-comment",
-            config=function() 
-                require('nvim_comment').setup()
-                end
-            }
-
+            'terrortylor/nvim-comment',
+            config = function()
+                require('plugins.comment')
+            end
+        }
 
         --treesitter: support more colorful highlighting
         use {
@@ -211,7 +202,6 @@ return require('packer').startup(
             'RRethy/vim-illuminate',
             event = 'BufRead'
         }
-
 
         use {
             'airblade/vim-rooter',
@@ -275,8 +265,6 @@ return require('packer').startup(
                 require('nvim-terminal').setup()
             end
         }
-
-
 
         use {
             'sbdchd/neoformat',
