@@ -11,6 +11,7 @@ mv nvim.appimage ~/.bin
 
 cd ~/.bin
 ln -s nv nvim.appimage
+ln -s nvim nvim.appimage
 ```
 add the following line in ~/.bashrc
 ```
