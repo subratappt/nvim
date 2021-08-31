@@ -86,79 +86,9 @@ leader key is `<Space>`.
 
 | keymap        | function                                 |
 | ------        | --------                                 |
-| tt            | open nvim tree explorer                  |
-| `<LEADER>+o`  | open nnn file manager(install nnn first) |
+| <Ctrl>+n            | open nvim tree explorer                  |
 
-## Hop
 
-![image](https://camo.githubusercontent.com/e71f83e31fd8950c8a584e28d68a5ca97502d3a57919119fb9e21943cb5ff76c/68747470733a2f2f706861617a6f6e2e6e65742f6d656469612f75706c6f6164732f686f705f63686172325f6d6f64652e676966) 
-
-| keymap       | function             |
-| ---          | ---                  |
-| `f`          | activate hop         |
-| `<leader>+j` | easymotion jump line |
-| `<leader>+k` | easymotion jump line |
-
-Example usage:
-
-Input `u` in normal mode and input two character of the keyword which highlighting. 
-Then the cursor will jump to that place.
-
-## neovim-lspconfig 
-
-| keymap       | function               |
-| ------       | --------               |
-| `[d/]d`      | Jump around diagnostic |
-| `LEADER` + e | show diagnostic        |
-| `LEADER + h` | show help message      |
-| gd           | go to definition       |
-| gD           | go to declaration      |
-
-Check [lsp.lua](../lua/plugins/lsp.lua) for more keymaps.
-
-Using `:LspInstall` to install plugin you want.
-
-- Rename variable
-
-| keymap             | function                     |
-| ---                | ---                          |
-| `<leader>` + r + n | rename variable under cursor |
-
-## Auto align
-
-<img style="max-width: 500px; max-height: 500px" 
-src="https://raw.githubusercontent.com/junegunn/i/master/easy-align/equals.gif" />
-
-| keymap                     | function                                                      |
-| ------                     | --------                                                      |
-| `:EasyAlign<CR>+<KEYWORD>` | In virsual mode or normal mode this will active align plugin. |
-| `<leader>+e`               | Activate easy align when in visual mode                       |
-
-Checkout [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align) for more.
-
-## Golang
-
-| keymap | function                            |
-| ---    | ---                                 |
-| got    | go test function under cursor |
-| gor    | go run  current  `.go` file   |
-
-Tricks: using `:GoRename` to renamed variable or struct name, can automatically changed all
-the name of references. Check out [fatih/vim-go](https://github.com/fatih/vim-go) for more.
-
-## Git
-
-![img](https://raw.githubusercontent.com/lewis6991/media/main/gitsigns_blame.gif) 
-
-| keymap | function        |
-| ---    | ---             |
-| gis    | stage changes   |
-| gip    | preview changes |
-| giu    | undo stage      |
-| gib    | git blame       |
-| gir    | reset changes   |
-| gin    | next hunk       |
-| gim    | previous hunk   |
 
 ## Symbols
 
@@ -188,30 +118,7 @@ src="https://camo.githubusercontent.com/334f5a06cbee4141889dfdf18a7c51a0ea408edb
 
 "HELLO" -> press `CS"'` change double quote to single quote -> 'HELLO'
 
-## wildfire
-
-![image](https://raw.githubusercontent.com/gcmt/wildfire.vim/master/_assets/preview.gif) 
-
-plugin to help you quick select surrounded object
-
-<img style="max-width: 500px; max-height: 500px" 
-src="https://raw.githubusercontent.com/gcmt/wildfire.vim/master/_assets/preview.gif" />
-
-Press enter to select text.
-
-> using wildfire and vim-surround can quickly select and changed object symbol.
-
-## Rust
-
-![img](https://raw.githubusercontent.com/simrat39/rust-tools-demos/master/rust-tools-debug.gif) 
-
-Use command `:LspInstall rust` to automatically configured up [rust-ananlyzer](https://rust-analyzer.github.io/)
-as lsp server.
-
-Also you will have extra command to help you coding in Rust. See
-[rust-tool.nvim](https://github.com/simrat39/rust-tools.nvim/) for more.
-
-## CPP
+## Cpp
 
 Use command `:LspInstall cpp` to automatically configured up clangd as lsp server.
 
@@ -228,39 +135,12 @@ cmake -BDebug . -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 ln -s Debug/compile_commands.json .
 ```
 
-# Markdown
 
-## Snippets
+# Comment
 
-```text
-code
-codeblock
-h[1-5]
-...
-```
-
-## Preview
-
-Press `:MarkdownPreview` command to activate preview, change the default browser
-and port in core/plugins.vim.
-
-## Toc
-
-Go to the line you want to generate TOC, then use the command `:GenTocGFM` to generate
-TOC that suitable for GitHub repository. Use the command `:GenToGitLab` to generate TOC
-that suitable for GitLab repository.
-
-## Table align
-
-Select lines at normal mode, press `:EasyAlign *|` can align your table.
-
-# vim-commentary
-
-Use gcc to comment out a line (takes a count), gc to comment out the target
-of a motion (for example, gcap to comment out a paragraph), gc in visual mode
-to comment out the selection, and gc in operator pending mode to target a
-comment. You can also use it as a command, either with a range like :7# 7Commentary,
-or as part of a :global invocation like with :g/TODO/Commentary. That's it.
+Use `gcc` to comment out a line (takes a count), `gc` to comment out the target
+of a motion (for example, gcap to comment out a paragraph), `gc` in visual mode
+to comment out the selection
 
 # FTerm
 
@@ -268,27 +148,6 @@ or as part of a :global invocation like with :g/TODO/Commentary. That's it.
 
 Press `<Ctrl>+\` to open a terminal, press it again to close the window.
 
-# Autopairs
-
-## `<CR>`
-
-```text
-Before        Input         After
-------------------------------------
-{|}           <CR>          {
-                              |
-                            }
-------------------------------------
-```
-
-## Fastwrap
-
-```text
-Before        Input                    After
---------------------------------------------------
-(|foobar      \e then press $        (|foobar)
-(|)(foobar)   \e then press q       (|(foobar))
-```
 
 # Telescope
 
