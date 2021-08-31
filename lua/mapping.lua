@@ -61,36 +61,11 @@ Map('n', '<leader><right>', ':vertical resize+5<CR>')
 -- --center line
 -- Map("i", "<C-c>",     "<ESC>zzi")
 
--- --nnn
--- Map('n', '<Leader>o', ':NnnPicker %:p:h<CR>')
-
--- --hop
--- Map('n', 'f'        , ':HopChar2<CR>')
--- Map('v', 'f'        , ':HopChar2<CR>')
--- Map('n', '<Leader>j', ':HopLine<CR>')
--- Map('n', '<Leader>k', ':HopLine<CR>')
 
 -- --telescope
 Map('n', '<leader>ff', [[<cmd>Telescope find_files<cr>]])
 -- Map('n', '<leader>fp', [[<cmd>Telescope media_files<cr>]])
--- Map('n', '<leader>fg', [[<cmd>Telescope live_grep<cr>]])
+Map('n', '<leader>fg', [[<cmd>Telescope live_grep<cr>]])
 Map('n', '<leader>fb', [[<cmd>Telescope file_browser<cr>]])
 -- Map('n', '<leader>fh', [[<cmd>Telescope help_tags<cr>]])
 
--- --SymbolsOutline
--- Map("n", "<leader>l", ":SymbolsOutline<CR>")
-
--- --EasyAlign
--- Map("v", "<leader>e", ":EasyAlign<CR>")
-
--- --AnyJump
--- Map('n', '<leader>aj', ':AnyJump<CR>')
--- Map('n', '<leader>ab', ':AnyJumpBack<CR>')
-
--- --vim-go
--- Map('n', 'got', ':GoTestFunc<CR>')
--- Map('n', 'gor', ':GoRun<CR>')
-
--- --nvim-tree
--- Map("n", "tt", ":NvimTreeToggle<CR>")
--- Map("n", "tr", ":NvimTreeRefresh<CR>")
