@@ -10,8 +10,8 @@ mkdir -p ~/.bin
 mv nvim.appimage ~/.bin
 
 cd ~/.bin
-ln -s nv nvim.appimage
-ln -s nvim nvim.appimage
+ln -s nvim.appimage nv
+ln -s nvim.appimage nvim
 ```
 add the following line in ~/.bashrc
 ```
