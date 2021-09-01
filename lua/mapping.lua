@@ -20,9 +20,6 @@ Map('', 'vw', 'viw')
 Map('', '<C-z>', 'u')
 Map('n', '<', '<<')
 Map('n', '>', '>>')
-Map('', 's', '<nop>')
-Map('', '-', 'N')
-Map('', '=', 'n')
 Map('n', ';', ':')
 
 vim.g.mapleader = ' '
