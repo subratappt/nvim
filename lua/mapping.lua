@@ -43,11 +43,6 @@ Map('n', '<ESC>', ':nohlsearch<CR>')
 
 Map('i', 'jj', '<ESC>')
 
-Map('n', 'spv', '<C-w>t<C-w>H')
-
-Map('n', 'srr', '<C-w>b<C-w>K')
-Map('n', 'srv', '<C-w>b<C-w>H')
-
 Map('n', '<leader><up>', ':res +5<CR>')
 Map('n', '<leader><down>', ':res -5<CR>')
 Map('n', '<leader><left>', ':vertical resize-5<CR>')
