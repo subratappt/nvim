@@ -38,8 +38,8 @@ return require('packer').startup(
             config = function()
                 require('plugins.telescope')
             end,
-            use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
-            use {'nvim-telescope/telescope-media-files.nvim'}
+--             use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
+--             use {'nvim-telescope/telescope-media-files.nvim'}
         }
 
         --nvim-bufferline: better buffer line--
