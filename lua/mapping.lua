@@ -61,6 +61,4 @@ Map('n', '<leader>fg', [[<cmd>Telescope live_grep<cr>]])
 Map('n', '<leader>fb', [[<cmd>Telescope file_browser<cr>]])
 -- Map('n', '<leader>fh', [[<cmd>Telescope help_tags<cr>]])
 
-Map("n", "tt", ":NvimTreeToggle<CR>")
-Map("n", "tr", ":NvimTreeRefresh<CR>")
 
