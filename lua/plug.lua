@@ -158,7 +158,7 @@ return require('packer').startup(
             config = function()
                 require('plugins.nvimtree')
             end,
-            -- cmd={"NvimTreeRefresh", "NvimTreeToggle"},
+            cmd={"NvimTreeRefresh", "NvimTreeToggle"},
             requires = 'kyazdani42/nvim-web-devicons'
         }
 
