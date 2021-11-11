@@ -33,8 +33,8 @@ git clone https://github.com/subratappt/nvim.git ~/.config/nvim
 Neovim configuration file
 
 # Vim shortcuts
-https://devhints.io/vim
-https://vim.rtorr.com/
+- https://devhints.io/vim
+- https://vim.rtorr.com/
 
 
 # Credits
