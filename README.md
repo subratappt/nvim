@@ -15,7 +15,7 @@ ln -s nvim.appimage nvim
 ```
 add the following line in ~/.bashrc
 ```
-export PATH=${HOME}/.bin:$PATH
+echo "export PATH=\${HOME}/.bin:\$PATH" >> ~/.bashrc
 ```
 Then download my configuration files
 ```
