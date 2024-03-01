@@ -29,22 +29,6 @@ return {
                 always_show_bufferline = true
             }
         }
-    end,
-    vim.api.nvim_set_keymap('n', '<Tab>', ':bnext<CR>', {
-        noremap = true,
-        silent = true
-    }),
-    vim.api.nvim_set_keymap('n', '<S-Tab>', ':bprevious<CR>', {
-        noremap = true,
-        silent = true
-    }),
-    vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<CR>', {
-        noremap = true,
-        silent = true
-    }),
-    vim.api.nvim_set_keymap('n', '<C-h>', ':wincmd h<CR>', {
-        noremap = true,
-        silent = true
-    })
+    end
 
 }
