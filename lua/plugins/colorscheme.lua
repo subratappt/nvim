@@ -8,9 +8,6 @@
 --             transparent_background = true
 --         })
 --         vim.cmd("colorscheme catppuccin-frappe") -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
---         -- vim.cmd(
---         --     "highlight Normal guibg=NONE ctermbg=NONE | highlight LineNr guibg=NONE ctermbg=NONE | highlight CursorLineNr guibg=NONE ctermbg=NONE | highlight EndOfBuffer guibg=NONE ctermbg=NONE | highlight SignColumn guibg=NONE ctermbg=NONE")
---     end
 -- }
 M = {
 
@@ -21,7 +18,11 @@ M = {
     config = function()
         require("tokyonight").setup({
             style = "night",
-            transparent = true
+            transparent = true,
+            styles = {
+                sidebars = "transparent",
+                floats = "transparent"
+            }
         })
         vim.cmd("colorscheme tokyonight")
     end

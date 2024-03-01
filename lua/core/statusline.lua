@@ -27,7 +27,7 @@ vim.cmd("highlight StatusLineInsert guifg=#cd2e2e")
 vim.cmd("highlight StatusLineReplace guifg=#b98d0a")
 vim.cmd("highlight StatusLineCmdLine guifg=#377690")
 vim.cmd("highlight StatusLineTerminal guifg=#941358")
-vim.cmd("highlight StatusLineExtra guifg=#c6ab52")
+vim.cmd("highlight StatusLineExtra guifg=#1fa7c6")
 
 vim.cmd("highlight LspDiagnosticsSignError guifg=#991313")
 vim.cmd("highlight LspDiagnosticsSignWarning guifg=#c49213")
@@ -204,8 +204,8 @@ end
 function Statusline.short()
     return "  NvimTree"
 end
-function Statusline.terminal()
-    return "  Terminal"
+function Statusline.shortLeave()
+    return "  NvimTree"
 end
 
 vim.api.nvim_exec([[
@@ -214,6 +214,7 @@ vim.api.nvim_exec([[
     au WinEnter,BufEnter * setlocal statusline=%!v:lua.Statusline.active()
     au WinLeave,BufLeave * setlocal statusline=%!v:lua.Statusline.inactive()
     au WinEnter,BufEnter,FileType NvimTree_* setlocal statusline=%!v:lua.Statusline.short()
+    au WinLeave,BufLeave,Filetype NvimTree_* setlocal statusline=%!v:lua.Statusline.short()
     au TermOpen * setlocal statusline=%!v:lua.Statusline.terminal()
     augroup END
     ]], false)
