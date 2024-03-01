@@ -5,14 +5,15 @@ return {
     },
     config = function()
         local nvimtree = require("nvim-tree")
+        local api = require("nvim-tree.api")
 
         -- recommended settings from nvim-tree documentation
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
 
         -- change color for arrows in tree to light blue
-        -- vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
-        -- vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
+        vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
+        vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
 
         -- configure nvim-tree
         nvimtree.setup({
@@ -26,10 +27,34 @@ return {
                     enable = true
                 },
                 icons = {
+                    show = {
+                        file = true,
+                        folder = true,
+                        folder_arrow = true,
+                        git = false
+                    },
+
                     glyphs = {
+                        default = "󰈚",
+                        symlink = "",
                         folder = {
-                            arrow_closed = "", -- arrow when folder is closed
-                            arrow_open = "" -- arrow when folder is open
+                            default = "",
+                            empty = "",
+                            empty_open = "",
+                            open = "",
+                            symlink = "",
+                            symlink_open = "",
+                            arrow_open = "",
+                            arrow_closed = ""
+                        },
+                        git = {
+                            unstaged = "✗",
+                            staged = "✓",
+                            unmerged = "",
+                            renamed = "➜",
+                            untracked = "★",
+                            deleted = "",
+                            ignored = "◌"
                         }
                     }
                 }
@@ -53,6 +78,8 @@ return {
                 ignore = false
             }
         })
+
+        vim.cmd('highlight Cursor guifg=white guibg=black')
 
         -- set keymaps
         local keymap = vim.keymap -- for conciseness
