@@ -43,9 +43,9 @@ return {
             }
         })
 
-        require"nvim-treesitter.install".compilers = {
-            "/home/subrata/apps/anaconda3/bin/clang"
-        }
+        -- require"nvim-treesitter.install".compilers = {
+        --     ""
+        -- }
 
     end
 

@@ -42,12 +42,13 @@ return {
             },
             window = {
                 mappings = {
-                    ["<SPACE>"] = "",
+                    ["<SPACE>"] = false,
                     ['<TAB>'] = "open",
                     ["P"] = "",
                     ga = "copy_absolute_path",
                     gr = "copy_relative_path",
-                    gf = "copy_filename"
+                    gf = "copy_filename",
+                    o = "open"
                 }
             },
             source_selector = {
