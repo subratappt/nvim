@@ -11,4 +11,30 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({{import="plugins"},{import="plugins.lsp"}})
+require("lazy").setup("plugins", {
+    install = {
+        colorscheme = {
+            "monokai-pro",
+            "habamax"
+        }
+    },
+    checker = {
+        enabled = false,
+        notify = false
+    },
+    performance = {
+        rtp = {
+            -- disable some rtp plugins
+            disabled_plugins = {
+                "gzip",
+                -- "matchit",
+                -- "matchparen",
+                -- "netrwPlugin",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
+                "zipPlugin"
+            }
+        }
+    }
+})

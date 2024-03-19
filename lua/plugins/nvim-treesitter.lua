@@ -1,8 +1,14 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     event = {
-        "BufReadPre",
+        "BufReadPost",
         "BufNewFile"
+    },
+    cmd = {
+        "TSInstall",
+        "TSBufEnable",
+        "TSBufDisable",
+        "TSModuleInfo"
     },
     build = ":TSUpdate",
     dependencies = {
@@ -38,8 +44,9 @@ return {
         })
 
         require"nvim-treesitter.install".compilers = {
-            "gcc"
+            "/home/subrata/apps/anaconda3/bin/clang"
         }
+
     end
 
 }

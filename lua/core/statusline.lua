@@ -208,6 +208,10 @@ function Statusline.shortLeave()
     return "  NvimTree"
 end
 
+function DisableST()
+    return " "
+end
+
 vim.api.nvim_exec([[
     augroup Statusline
     au!
@@ -222,3 +226,7 @@ vim.api.nvim_exec([[
 -- vim.api.nvim_exec([[
 --     au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree_1" | set laststatus=0 | else | set laststatus=2 | endif
 --     ]], false)
+
+-- require('nvim-tree.api').events.subscribe(api.events.Event.TreeOpen, function ()
+--     vim.wo.statusline = ' '
+-- end)

@@ -9,8 +9,15 @@ return {
             options = {
                 offsets = {
                     {
+                        -- filetype = "NvimTree",
+                        filetype = "neo-tree",
+                        text = "Explorer",
+                        padding = 0
+                    },
+                    {
                         filetype = "NvimTree",
-                        text = "",
+                        -- filetype = "neo-tree",
+                        text = "Explorer",
                         padding = 0
                     }
                 },

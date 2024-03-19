@@ -23,17 +23,6 @@ keymap.set("n", "<leader>wq", "<cmd>write<CR><cmd>quit<CR>", {
 })
 
 -- buffer navigation
-keymap.set("n", "<leader>bn", "<cmd>BufferNext<CR>", {
-    desc = "Next buffer"
-})
-
-keymap.set("n", "<leader>bp", "<cmd>BufferPrevious<CR>", {
-    desc = "Previous buffer"
-})
-
-keymap.set("n", "<leader>bd", "<cmd>BufferClose<CR>", {
-    desc = "Close buffer"
-})
 
 keymap.set('n', '<Tab>', ':bnext<CR>', {
     noremap = true,
@@ -47,6 +36,22 @@ keymap.set('n', '<S-Tab>', ':bprevious<CR>', {
     desc = "Previous buffer"
 })
 
+keymap.set('n', '<leader>bd', function()
+    vim.api.nvim_command('bp|sp|bn|bd')
+end, {
+    noremap = true,
+    silent = true,
+    desc = "Delete buffer and keep window open"
+})
+
+keymap.set('n', '<leader>bn', ':enew<CR>', {
+    noremap = true,
+    silent = true,
+    desc = "New buffer"
+})
+
+-- window navigation
+
 keymap.set('n', '<C-l>', ':wincmd l<CR>', {
     noremap = true,
     silent = true,
@@ -58,3 +63,16 @@ keymap.set('n', '<C-h>', ':wincmd h<CR>', {
     silent = true,
     desc = "Move to left window"
 })
+
+keymap.set("n", "<leader>ee", "<cmd>Neotree toggle<CR>", {
+    desc = "Toggle file explorer"
+})
+
+-- keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", {
+--     desc = "Toggle file explorer"
+-- })
+
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", {
+    desc = "Find files"
+})
+

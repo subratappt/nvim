@@ -1,5 +1,21 @@
 return {
-    "github/copilot.vim",
-    event = "VeryLazy", -- "InsertEnter", -- "BufRead
-    cmd = "Copilot"
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "VeryLazy", -- "InsertEnter",
+    config = function()
+        require("copilot").setup({
+            suggestion = {
+                enabled = true,
+                auto_trigger = true,
+                keymap = {
+                    accept = "<TAB>"
+                }
+            }
+        })
+    end
 }
+-- return {
+--     "github/copilot.vim",
+--     event = "InsertEnter",
+--     cmd = "Copilot"
+-- }

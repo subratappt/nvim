@@ -12,7 +12,7 @@ return {
             direction = "float",
             float_opts = {
                 border = "double",
-                width = 80,
+                width = 120,
                 height = 15,
                 highlights = {
                     background = 'MyHighlight',
