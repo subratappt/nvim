@@ -19,12 +19,15 @@ return {
         {
             "<leader>cc",
             function()
-                local input = vim.fn.input("Quick Chat: ")
-                if input ~= "" then
-                    require("CopilotChat").ask(input, {
-                        selection = require("CopilotChat.select").buffer
-                    })
-                end
+                vim.ui.input({
+                    prompt = 'Chat with Copilot: '
+                }, function(input)
+                    if input and input ~= '' then
+                        require("CopilotChat").ask(input, {
+                            selection = require("CopilotChat.select").buffer
+                        })
+                    end
+                end)
             end,
             desc = "CopilotChat - Quick chat"
         }
