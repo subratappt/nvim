@@ -5,7 +5,7 @@ Neovim configuration file
 
 
 <details>
-  <summary>Fix:</summary>
+  <summary>Fix for nvim-treesitter:</summary>
   
 Fix:
 ``` lua
@@ -19,4 +19,8 @@ Fix:
       "-std=c99"
     }
 ```
+
+or 
+
+CC=/path-of-gcc-that-support-c99-or-clang nvim
 </details>

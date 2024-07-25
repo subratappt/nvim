@@ -47,3 +47,5 @@ opt.fillchars = {
 }
 
 opt.ruler = false -- disable ruler
+
+vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin" .. (is_windows and ";" or ":") .. vim.env.PATH

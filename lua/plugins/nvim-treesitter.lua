@@ -26,8 +26,8 @@ return {
                 "cpp",
                 "fortran",
                 "python",
-                "markdown",
-                "latex"
+                "markdown"
+                -- "latex" -- not working due to tree-sitter issue
             },
             auto_install = true,
             highlight = {
