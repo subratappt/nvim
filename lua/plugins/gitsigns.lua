@@ -1,7 +1,9 @@
 return {
-  "lewis6991/gitsigns.nvim",
-  event = {
-    "User FilePost"
-  },
-  config = true
+    "lewis6991/gitsigns.nvim",
+    event = {
+        "BufReadPost"
+    },
+    config = function()
+        require("gitsigns").setup({})
+    end
 }
